@@ -1,0 +1,89 @@
+extends layouts/index
+
+block variables
+  include ../data/data.pug
+
+
+block content
+
+  .container-w1000 
+    .courses
+      .courses__list
+        .courses__item
+          +card-course({
+            img: '/img/Rectangle2',
+            title: 'Юриспруденция',
+          })
+        .courses__item
+          +card-course({
+            img: '/img/Rectangle3',
+            title: 'Машиностроение',
+          })
+        .courses__item
+          +card-course({
+            img: '/img/Rectangle4',
+            title: 'Энергетика',
+          })
+
+  .container-w1000 
+    .courses-sub
+      .courses-sub__list
+        .courses-sub__item: +card-subcourse({
+          img: '/img/Rectangle5',
+          title: 'Юрист в сфере здравохранения',
+          })
+        .courses-sub__item: +card-subcourse({
+          img: '/img/Rectangle6',
+          title: 'Юрист по земельному праву',
+          })
+
+
+mixin card-course(data)
+  .card-course
+    .card-course__wrp
+      .card-course__image
+        a(href='#')
+          picture
+            source(srcset=data.img+".webp" type="image/webp" )
+            img(src=data.img+".jpg")
+      .card-course__title
+        a(href='#')=data.title
+      .card-course__desc
+        span  Курсы включают в себя такие направления как:
+      .card-course__list
+        ul
+          li Юрист в сфере здравохранения
+          li Юрист по земельному праву
+          li Юрист по защите прав потребителя
+      .card-course__count
+        span Всего 14 курсов
+
+      .card-course__btn
+        a(href='#'): button.btn.btn-default все курсы
+mixin card-subcourse(data)
+  .card-subcourse
+    .card-subcourse__image
+      a(href='#')
+        picture
+          source(srcset=data.img+".webp" type="image/webp" )
+          img(src=data.img+".jpg")
+    .card-subcourse__head
+      .card-subcourse__title: a(href='#')= data.title
+      .card-subcourse__date Начало 15 мая 2022г.
+    .card-subcourse__main
+      .card-subcourse__prop
+        ul
+          li
+            span Кол-во часов
+            span 540 часов
+          li
+            span Стоимость
+            span от 18 600 р
+
+      .card-subcourse__btn
+        a(href='#'): button.btn.btn-default Записаться 
+
+
+block scripts
+  script(src="js/main.js?v=1.52")
+  script(src="js/vendor.js") 
