@@ -14,11 +14,13 @@ block content
             img: '/img/Rectangle2',
             title: 'Юриспруденция',
           })
+
         .courses__item
           +card-course({
             img: '/img/Rectangle3',
             title: 'Машиностроение',
           })
+
         .courses__item
           +card-course({
             img: '/img/Rectangle4',
@@ -36,6 +38,75 @@ block content
           img: '/img/Rectangle6',
           title: 'Юрист по земельному праву',
           })
+
+  .container-w1000 
+    .course-detail
+      .course-detail__image
+        picture
+          source(srcset="/img/Rectangle5.webp" type="image/webp" )
+          img(src="/img/Rectangle5.jpg")
+      .course-detail__calculate
+        .drag_block.order
+          table.order-block
+            tbody
+              tr
+                td.text_wrap.col-md-9.col-sm-8.col-xs-7.valign
+                  .text
+                    |  Рассчитать стоимость обучения  
+                    br
+                    |  Стоимость рассчитывается исходя от количества человек заявленных на обучение*
+                td.col-md-3.col-sm-4.col-xs-5.valign
+                  .btns
+                    span
+                      span.btn.btn-default.btn-lg.animate-load.order(data-event='jqm', data-param-id='18', data-name='order_services', data-autoload-service='Машинист копра копровщик', data-autoload-project='Машинист копра копровщик')
+                        span Рассчитать стоимость обучения в Екатеринбурге 
+      .course-detail__fulltext
+        .course-detail__qa
+          .course-qa
+            .course-qa__title Тип образования:
+            .course-qa__text Профессиональная переподготовка
+          .course-qa
+            .course-qa__title Форма обучения:
+            .course-qa__text Заочная с применением дистанционных образовательных технологий
+          .course-qa
+            .course-qa__title Тип документа:
+            .course-qa__text Диплом
+          .course-qa
+            .course-qa__title Условия оплаты:
+            .course-qa__text предоплата, возможна рассрочка платежей и оплата материнским капиталом
+        .course-detail__prop
+          .course-prop
+            .course-prop__icon
+              picture
+                img(src="/img/svg/ic_people.svg")
+            .course-prop__title Ближайший набор:
+            .course-prop__text 
+              span февраль 2022, март 2022
+          .course-prop
+            .course-prop__icon
+              picture
+                img(src="/img/svg/ic_calc.svg")
+            .course-prop__title Длительность обучения:
+            .course-prop__text 
+              span 4 месяца (540 часов)
+          .course-prop
+            .course-prop__icon
+              picture
+                img(src="/img/svg/ic_voice.svg")
+            .course-prop__title Средняя зарплата:
+            .course-prop__text 
+              span 55 000 ₽/месяц
+              small По данным hh.ru на 2021 год
+          .course-prop
+            .course-prop__icon
+              picture
+                img(src="/img/svg/ic_cost.svg")
+            .course-prop__title Стоимость обучения:
+            .course-prop__text  
+              span.cost от 18 600 р.
+                s 39 900 р.
+              small.sale Скидка 51%
+
 
 
 mixin card-course(data)
